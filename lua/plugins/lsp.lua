@@ -36,17 +36,32 @@ return {
 	--This plugin communicates with the Lang Server and reports errors in the editor
 	{
 		"neovim/nvim-lspconfig",
+    dependencies = {
+    },
 		lazy = false,
 		config = function()
 			local lspconfig = require("lspconfig")
+			local capabilities = require("cmp_nvim_lsp").default_capabilities() -- Connecting the LSP with the Luasnip autocomplete engine
 
 			--Language Servers
-			lspconfig.tsserver.setup({})
-			lspconfig.html.setup({})
-			lspconfig.lua_ls.setup({})
-			lspconfig.cssls.setup({})
-			lspconfig.pyright.setup({})
-			lspconfig.tailwindcss.setup({})
+			lspconfig.tsserver.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.html.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.lua_ls.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.cssls.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.pyright.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.tailwindcss.setup({
+				capabilities = capabilities,
+			})
 
 			--Keymaps
 		end,
