@@ -1,3 +1,4 @@
+-- TODO:look for aprerture science ascii art
 return {
 	"nvimdev/dashboard-nvim",
 	event = "VimEnter",
