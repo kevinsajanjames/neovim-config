@@ -13,7 +13,16 @@ return {
 		lazy = false,
 		opts = {
 			auto_install = true,
-			ensure_installed = { "lua_ls", "cssls", "html", "tsserver", "pyright", "tailwindcss", "svelte" },
+			ensure_installed = {
+				"lua_ls",
+				"cssls",
+				"html",
+				"tsserver",
+				"pyright",
+				"tailwindcss",
+				"svelte",
+				"gopls",
+			},
 		},
 	},
 	--Plugin used to install linters and formatters, because the plugin above can only install lsps I think
@@ -23,7 +32,7 @@ return {
 			local mason_tool_installer = require("mason-tool-installer")
 			mason_tool_installer.setup({
 				ensure_installed = {
-					"prettierd", -- prettier formatter
+					"prettier", -- prettier formatter
 					"stylua", -- lua formatter
 					"isort", -- python formatter
 					"black", -- python formatter
@@ -36,8 +45,7 @@ return {
 	--This plugin communicates with the Lang Server and reports errors in the editor
 	{
 		"neovim/nvim-lspconfig",
-    dependencies = {
-    },
+		dependencies = {},
 		lazy = false,
 		config = function()
 			local lspconfig = require("lspconfig")
@@ -60,6 +68,9 @@ return {
 				capabilities = capabilities,
 			})
 			lspconfig.tailwindcss.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.gopls.setup({
 				capabilities = capabilities,
 			})
 
