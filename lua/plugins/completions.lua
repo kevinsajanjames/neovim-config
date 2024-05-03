@@ -8,6 +8,7 @@ return {
 		dependencies = {
 			"saadparwaiz1/cmp_luasnip", --This executes the data in the snippet in the buffer
 			"rafamadriz/friendly-snippets", --For VScode snippets for completion
+			"hrsh7th/cmp-path",
 		},
 	},
 	{
@@ -37,7 +38,8 @@ return {
 				}),
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" }, -- For completions from the Language Server
-					{ name = "luasnip" }, -- For luasnip completions
+					{ name = "luasnip" }, -- For luasnip completions, the VScode snippets are fed into this
+					{ name = "path" },
 					{ name = "buffer" },
 				}),
 			})
