@@ -9,15 +9,18 @@ return {
 
 		configs.setup({
 			ensure_installed = {
+				-- General
 				"lua",
 				"json",
 				"yaml",
 				"markdown",
+				-- Wev Dev
 				"html",
 				"css",
 				"javascript",
 				"typescript",
 				"tsx",
+				-- Other Languages
 				"python",
 				"go",
 			},
