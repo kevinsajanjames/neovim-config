@@ -23,7 +23,7 @@ keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) 
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
 
 -- navigation
-keymap.set("n", "<C-d>", "<C-d>zz", {desc = "Fly Down"})
-keymap.set("n", "<C-u>", "<C-u>zz", {desc = "Fly Up"})
-keymap.set("n", "<TAB>", "<cmd>bnext<CR>", {desc = "Next Buffer"})
-keymap.set("n", "<S-TAB>", "<cmd>bprev<CR>", {desc = "Previous Buffer"})
+keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Fly Down" })
+keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Fly Up" })
+keymap.set("n", "<TAB>", "<cmd>bnext<CR>", { desc = "Next Buffer" })
+keymap.set("n", "<S-TAB>", "<cmd>bprev<CR>", { desc = "Previous Buffer" })
